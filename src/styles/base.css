@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+<div class=" h-screen bg-primary-600 p-10 font-serif">
+  <p>Paragraph</p>
+  <p class="cursor-pointer whitespace-nowrap text-3xl font-black">Menu Item active</p>
+  <p class="cursor-pointer whitespace-nowrap text-3xl font-black opacity-50">Menu Item active</p>
+  <h1 class="p-4 text-4xl text-primary-50 underline">Header Link</h1>
+  <h1 class="p-4 text-4xl text-primary-50">Header</h1>
+  <h2 class="p-4 text-xl text-primary-200">Subheading</h2>
+  <h1 class="italic">Logo</h1>
+  <nav class="italic">Menu</nav>
+  <h1 class="p-10 text-5xl">Page Title</h1>
+    <a class="font-bold underline italic text-primary-100">type-link-text</a>
+</div>
+*/
+
+@layer components {
+}
+
+@layer base {
+	:is(.type h1):not(:where(.no-type *)) {
+		@apply py-10 text-5xl font-serif font-black;
+	}
+	:is(.type h2):not(:where(.no-type *)) {
+		@apply py-6 text-4xl font-serif font-bold;
+	}
+	:is(.type h3):not(:where(.no-type *)) {
+		@apply py-6 text-3xl font-serif font-bold;
+	}
+	:is(.type h4):not(:where(.no-type *)) {
+		@apply py-6 text-2xl font-serif font-bold;
+	}
+	:is(.type h5):not(:where(.no-type *)) {
+		@apply py-6 text-xl font-serif font-bold;
+	}
+	:is(.type h6):not(:where(.no-type *)) {
+		@apply py-6 text-lg font-serif font-bold;
+	}
+	:is(.type p):not(:where(.no-type *)) {
+		@apply font-serif text-lg leading-loose pb-5 px-4;
+	}
+	:is(.type div):not(:where(.no-type *)) {
+		@apply font-serif text-lg leading-loose pb-5 px-4;
+	}
+	:is(.type a):not(:where(.no-type *)) {
+		@apply font-bold underline italic text-primary-200 visited:text-primary-600 font-serif break-words;
+	}
+	:is(.type ul):not(:where(.no-type *)) {
+		@apply pb-5 list-disc px-8;
+	}
+	:is(.type ol):not(:where(.no-type *)) {
+		@apply pb-5 list-decimal px-8;
+	}
+	:is(.type li):not(:where(.no-type *)) {
+		@apply pb-5 font-serif text-lg leading-loose px-1;
+	}
+	:is(.type blockquote):not(:where(.no-type *)) {
+		@apply p-6 italic font-serif leading-loose pb-5 px-4 text-xl;
+	}
+	:is(.type dl):not(:where(.no-type *)) {
+		@apply px-4;
+	}
+	:is(.type dt):not(:where(.no-type *)) {
+		@apply font-serif text-lg leading-loose px-1 font-bold;
+	}
+	:is(.type dd):not(:where(.no-type *)) {
+		@apply font-serif text-lg leading-loose px-10;
+	}
+}

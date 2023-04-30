@@ -1,13 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 
-import { contentfulClient } from "../utils/contentful";
+import { contentfulClient } from "../../utils/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 const response = await contentfulClient.getEntries({
   content_type: "blogPost", 
-  'fields.slug': Astro.params.slug,
-  'metadata.tags.sys.id[all]': 'main'
+  'fields.slug': Astro.params.slug
 })
 const article = response.items[0].fields
 const content = documentToHtmlString(article.article)
@@ -17,6 +16,7 @@ const content = documentToHtmlString(article.article)
 <Layout>
   <article>
     <h1 class="font-black text-7xl">{article.title}</h1>
+    <br />
     <div class="type">
       <article set:html={content}></article>
     </div>
