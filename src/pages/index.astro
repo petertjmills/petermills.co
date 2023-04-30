@@ -10,9 +10,11 @@ const response = await contentfulClient.getEntries({
   'fields.slug': Astro.params.slug,
   'metadata.tags.sys.id[all]': 'main'
 })
+console.log(response)
 const article = response.items[0].fields
+console.log(article)
 const content = documentToHtmlString(article.article)
-
+console.log(content)
 ---
 
 <Layout>
