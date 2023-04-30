@@ -5,6 +5,10 @@ if (import.meta.env.DEV){
     process.env.CONTENTFUL_DELIVERY_TOKEN = import.meta.env.CONTENTFUL_DELIVERY_TOKEN;
     process.env.CONTENTFUL_PREVIEW_TOKEN = import.meta.env.CONTENTFUL_PREVIEW_TOKEN;
 }
+console.log("helpme")
+console.log(process.env.CONTENTFUL_SPACE_ID)
+console.log(process.env.CONTENTFUL_DELIVERY_TOKEN)
+console.log(process.env.CONTENTFUL_PREVIEW_TOKEN)
 
 export const contentfulClient = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
