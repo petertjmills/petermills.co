@@ -1,8 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-console.log('init page')
 import { contentfulClient } from "../utils/contentful";
-console.log('inited')
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 const response = await contentfulClient.getEntries({
@@ -10,11 +8,8 @@ const response = await contentfulClient.getEntries({
   'fields.slug': Astro.params.slug,
   'metadata.tags.sys.id[all]': 'main'
 })
-console.log(response)
 const article = response.items[0].fields
-console.log(article)
 const content = documentToHtmlString(article.article)
-console.log(content)
 ---
 
 <Layout>
