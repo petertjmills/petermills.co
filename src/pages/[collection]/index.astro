@@ -16,6 +16,10 @@ const posts = response.items.map((item) => {
   }
 })
 
+if (posts.length === 0) {
+  return Astro.redirect('/404')
+}
+
 const postsByDate = posts.sort((a, b) => {
   return b.data.date - a.data.date;
 });
