@@ -10,7 +10,7 @@ const response = await contentfulClient.getEntries({
 })
 const article = response.items[0].fields
 const content = documentToHtmlString(article.article)
-
+console.log("anything");
 ---
 
 <Layout>
