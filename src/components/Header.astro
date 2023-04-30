@@ -11,14 +11,13 @@ const tags = response.items.map((item) => {
   return [item.sys.id, item.name];
 });
 const menuItems = tags.filter((item) => item);
-
 ---
 
 <header>
   <div class="flex flex-wrap justify-between p-3" id="header">
     <a href="/" class="logo px-5 lg:px-10">e-clare</a>
     <div class="flex gap-1 lg:gap-10 align-center place-items-center">
-      <ToggleDarkMode client:idle />
+      <ToggleDarkMode client:only />
       <Menu />
     </div>
   </div>
