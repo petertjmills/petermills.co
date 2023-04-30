@@ -31,7 +31,7 @@ const collectionName = collection.charAt(0).toUpperCase() + collection.slice(1);
             postsByDate.map((post) => {
                 return (
                     <div class="flex gap-5">
-                        <p class="italic">{new Date(post.data.date).toLocaleDateString()}</p>
+                        <p class="italic">{new Date(post.data.date).toLocaleDateString('en-GB')}</p>
                         <a class="underline" href={collection + "/" + post.slug}>{post.data.title}</a>
                     </div>
                 )
