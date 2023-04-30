@@ -11,6 +11,13 @@ const tags = response.items.map((item) => {
   return [item.sys.id, item.name];
 });
 const menuItems = tags.filter((item) => item);
+//sort menu items alphabetically
+menuItems.sort((a, b) => {
+  if (a[1] < b[1]) return -1;
+  if (a[1] > b[1]) return 1;
+  return 0;
+});
+
 ---
 
 <header>
