@@ -17,3 +17,5 @@ export const contentfulClient = contentful.createClient({
     : process.env.CONTENTFUL_DELIVERY_TOKEN,
   host: process.env.DEV ? "preview.contentful.com" : "cdn.contentful.com",
 });
+
+console.log(contentfulClient)

@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 console.log('init page')
 import { contentfulClient } from "../utils/contentful";
+console.log('inited')
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 const response = await contentfulClient.getEntries({
