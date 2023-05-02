@@ -6,7 +6,10 @@ import "react-cmdk/dist/cmdk.css";
 import CommandPalette from "react-cmdk";
 
 import algoliasearch from "algoliasearch";
-const client = algoliasearch("3GWKJ0JPKW", "5d03bfda15113f49d9f4a8d80556d7a5");
+const algoliaAppID = process.env.REACT_APP_ALGOLIA_APP_ID;
+const algoliaSearchKey = process.env.REACT_APP_ALGOLIA_SEARCH_KEY;
+
+const client = algoliasearch(algoliaAppID, algoliaSearchKey);
 const index = client.initIndex("eclare");
 
 const CommandMenu = ({ searchClicked, setSearchClicked }) => {
@@ -47,6 +50,8 @@ const CommandMenu = ({ searchClicked, setSearchClicked }) => {
 			{item.fields.title['en-US']}
           </CommandPalette.ListItem>
         ))}
+
+        
       </CommandPalette.List>
     </CommandPalette>
   );
