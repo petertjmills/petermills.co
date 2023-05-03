@@ -31,7 +31,6 @@ const ToggleDarkMode = () => {
 			document.documentElement.classList.add("dark");
 			localStorage.theme = "dark";
 		}
-		console.log(darkMode);
 	};
 
 	return (

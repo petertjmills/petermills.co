@@ -20,7 +20,6 @@ const CommandMenu = ({ searchClicked, setSearchClicked }) => {
 	useEffect(() => {
 		if (searchClicked) {
 			index.search(search, { hitsPerPage: 10 }).then(({ hits }) => {
-				console.log(hits);
 				setData(hits);
 			});
 		}

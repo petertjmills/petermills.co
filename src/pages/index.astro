@@ -4,7 +4,6 @@ import Layout from "../layouts/Layout.astro";
 import { getEntryBySlug } from 'astro:content';
 
 const response = await getEntryBySlug('main', 'home');
-console.log(response);
 
 const { Content } = await response.render();
 ---
