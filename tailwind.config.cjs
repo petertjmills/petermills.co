@@ -44,7 +44,8 @@ module.exports = {
 				},
 			},
 			fontFamily: {
-				serif: ["Bodoni Moda", ...defaultTheme.fontFamily.serif],
+				serif: [...defaultTheme.fontFamily.serif],
+				sans: ["inter", ...defaultTheme.fontFamily.sans],
 			},
 		},
 	},

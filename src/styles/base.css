@@ -22,31 +22,31 @@
 
 @layer base {
 	:is(.type h1):not(:where(.no-type *)) {
-		@apply py-10 text-5xl font-serif font-black;
+		@apply py-10 text-5xl font-black;
 	}
 	:is(.type h2):not(:where(.no-type *)) {
-		@apply py-6 text-4xl font-serif font-bold;
+		@apply py-6 text-4xl font-bold;
 	}
 	:is(.type h3):not(:where(.no-type *)) {
-		@apply py-6 text-3xl font-serif font-bold;
+		@apply py-6 text-3xl font-bold;
 	}
 	:is(.type h4):not(:where(.no-type *)) {
-		@apply py-6 text-2xl font-serif font-bold;
+		@apply py-6 text-2xl font-bold;
 	}
 	:is(.type h5):not(:where(.no-type *)) {
-		@apply py-6 text-xl font-serif font-bold;
+		@apply py-6 text-xl font-bold;
 	}
 	:is(.type h6):not(:where(.no-type *)) {
-		@apply py-6 text-lg font-serif font-bold;
+		@apply py-6 text-lg font-bold;
 	}
 	:is(.type p):not(:where(.no-type *)) {
-		@apply font-serif text-lg leading-loose pb-5 px-4;
+		@apply text-lg leading-loose pb-5 px-4;
 	}
 	:is(.type div):not(:where(.no-type *)) {
-		@apply font-serif text-lg leading-loose pb-5 px-4;
+		@apply text-lg leading-loose pb-5 px-4;
 	}
 	:is(.type a):not(:where(.no-type *)) {
-		@apply font-bold underline italic text-primary-200 visited:text-primary-600 font-serif break-words;
+		@apply font-bold underline italic text-primary-200 visited:text-primary-600 dark:text-secondary-200 break-words;
 	}
 	:is(.type ul):not(:where(.no-type *)) {
 		@apply pb-5 list-disc px-8;
@@ -55,18 +55,18 @@
 		@apply pb-5 list-decimal px-8;
 	}
 	:is(.type li):not(:where(.no-type *)) {
-		@apply pb-5 font-serif text-lg leading-loose px-1;
+		@apply pb-5 text-lg leading-loose px-1;
 	}
 	:is(.type blockquote):not(:where(.no-type *)) {
-		@apply p-6 italic font-serif leading-loose pb-5 px-4 text-xl;
+		@apply p-6 italic leading-loose pb-5 px-4 text-xl;
 	}
 	:is(.type dl):not(:where(.no-type *)) {
 		@apply px-4;
 	}
 	:is(.type dt):not(:where(.no-type *)) {
-		@apply font-serif text-lg leading-loose px-1 font-bold;
+		@apply text-lg leading-loose px-1 font-bold;
 	}
 	:is(.type dd):not(:where(.no-type *)) {
-		@apply font-serif text-lg leading-loose px-10;
+		@apply text-lg leading-loose px-10;
 	}
 }

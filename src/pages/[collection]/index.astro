@@ -2,29 +2,30 @@
 import Layout from "../../layouts/Layout.astro"
 
 const { collection } = Astro.params;
-import { contentfulClient } from "../../utils/contentful";
+import { getCollection } from 'astro:content'
 
-const response = await contentfulClient.getEntries({
-  content_type: 'blogPost',
-  'metadata.tags.sys.id[in]': collection,
-  select: 'fields.title,fields.slug,fields.date'
-})
-const posts = response.items.map((item) => {
-  return {
-    data: item.fields,
-    slug: item.fields.slug
+//is env dev?
+const dev = process.env.NODE_ENV !== 'production';
+
+const response = await getCollection(collection, (collection) => {
+  if (collection.data.draft && !dev) {
+    return false
   }
-})
-
-if (posts.length === 0) {
-  return Astro.redirect('/404')
+  return true
+});
+if (response.length === 0) {
+    return Astro.redirect('/404')
 }
 
-const postsByDate = posts.sort((a, b) => {
-  return b.data.date - a.data.date;
-});
-//capitalize collection name
+//collection name = collection capitalised
 const collectionName = collection.charAt(0).toUpperCase() + collection.slice(1);
+
+//sort posts by date
+const postsByDate = response.sort((a, b) => {
+    return new Date(b.data.date) - new Date(a.data.date);
+})
+
+console.log(postsByDate[0].slug);
 ---
 
 <Layout>
@@ -36,7 +37,7 @@ const collectionName = collection.charAt(0).toUpperCase() + collection.slice(1);
                 return (
                     <div class="flex gap-5">
                         <p class="italic">{new Date(post.data.date).toLocaleDateString('en-GB')}</p>
-                        <a class="underline" href={collection + "/" + post.slug}>{post.data.title}</a>
+                        <a class="underline" href={'/' + collection + "/" + post.slug}>{post.data.title}</a>
                     </div>
                 )
             })
