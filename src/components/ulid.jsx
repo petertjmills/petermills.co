@@ -27,7 +27,7 @@ const Ulid = () => {
 	};
 
 	return (
-		<div className="flex justify-center">
+		<div className="flex justify-center pt-5">
 			<div className="flex flex-col justify-center w-1/2 gap-5">
 				<Input value={id} className="align-center" />
 				<Button
