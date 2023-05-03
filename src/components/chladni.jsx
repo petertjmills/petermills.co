@@ -153,7 +153,7 @@ const App = () => {
 				</Canvas>
 			</div>
 			<div className="flex flex-col">
-				<label className="text-white">n: {n}</label>
+				<label className="">n: {n}</label>
 				<input
 					type="range"
 					min="0"
@@ -163,7 +163,7 @@ const App = () => {
 					onChange={(e) => setN(e.target.value)}
 				/>
 
-				<label className="text-white">m: {m}</label>
+				<label className="">m: {m}</label>
 				<input
 					type="range"
 					min="0"
@@ -173,7 +173,7 @@ const App = () => {
 					onChange={(e) => setM(e.target.value)}
 				/>
 
-				<label className="text-white">a: {a}</label>
+				<label className="">a: {a}</label>
 				<input
 					type="range"
 					min="-100"
@@ -183,7 +183,7 @@ const App = () => {
 					onChange={(e) => setA(e.target.value)}
 				/>
 
-				<label className="text-white">b: {b}</label>
+				<label className="">b: {b}</label>
 				<input
 					type="range"
 					min="-100"
@@ -193,21 +193,21 @@ const App = () => {
 					onChange={(e) => setB(e.target.value)}
 				/>
 
-				<label className="text-white">colorOne: {colorOne}</label>
+				<label className="">colorOne: {colorOne}</label>
 				<input
 					type="color"
 					value={colorOne}
 					onChange={(e) => setColorOne(e.target.value)}
 				/>
 
-				<label className="text-white">colorTwo: {colorTwo}</label>
+				<label className="">colorTwo: {colorTwo}</label>
 				<input
 					type="color"
 					value={colorTwo}
 					onChange={(e) => setColorTwo(e.target.value)}
 				/>
 
-				<label className="text-white">
+				<label className="">
 					backgroundColor: {backgroundColor}
 				</label>
 				<input
@@ -216,14 +216,14 @@ const App = () => {
 					onChange={(e) => setBackgroundColor(e.target.value)}
 				/>
 
-				<label className="text-white">opacityOne: {opacityOne}</label>
+				<label className="">opacityOne: {opacityOne}</label>
 				<input
 					type="checkbox"
 					checked={opacityOne}
 					onChange={(e) => setOpacityOne(e.target.checked)}
 				/>
 
-				<label className="text-white">opacityTwo: {opacityTwo}</label>
+				<label className="">opacityTwo: {opacityTwo}</label>
 				<input
 					type="checkbox"
 					checked={opacityTwo}
