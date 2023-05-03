@@ -7,6 +7,8 @@ import { getEntryBySlug } from "astro:content";
 
 const response = await getEntryBySlug(collection, slug);
 
+console.log(response)
+
 if (!response) {
 	return Astro.redirect("/404");
 }
