@@ -8,8 +8,8 @@ menu:
       url: /dev/
     - title: "Tools"
       url: /tools/
-    - title: "Photography"
-      url: /photography/
+    - title: "Shaders"
+      url: /shaders/
       
 id: 01GZFCAKZDX9CV3PRYEAB7X7JZ
 ---
