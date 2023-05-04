@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState, useCallback } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import useMeasure from "react-use-measure";
@@ -118,18 +118,36 @@ const App = (props) => {
 
 	const [ref, bounds] = useMeasure();
 
-    const jsonToClipboard = () => {
-        const json = {
-            n: n,
-            m: m,
-            a: a,
-            b: b,
-            colorOne: colorOne,
-            colorTwo: colorTwo,
-            opacityOne: opacityOne,
-            opacityTwo: opacityTwo,
-        }
-        navigator.clipboard.writeText(JSON.stringify(json));
+	const getURLparams = () => {
+		const urlParams = new URLSearchParams(window.location.search);
+		setN(urlParams.get('n') || 3.0);
+		setM(urlParams.get('m') || 5.0);
+		setA(urlParams.get('a') || 100.0);
+		setB(urlParams.get('b') || 100.0);
+		setColorOne(urlParams.get('colorOne') || '#000000');
+		setColorTwo(urlParams.get('colorTwo') || '#000000');
+		setOpacityOne(urlParams.get('opacityOne') || 1);
+		setOpacityTwo(urlParams.get('opacityTwo') || 1);
+		setBackgroundColor(urlParams.get('backgroundColor') || '#ffffff');
+		setAnimate(urlParams.get('animate') || 0.5);
+	}
+	useEffect(() => {
+		getURLparams();
+	}, []);
+
+    const urlToClipboard = () => {
+		const url = new URL(window.location.href);
+		url.searchParams.set('n', n);
+		url.searchParams.set('m', m);
+		url.searchParams.set('a', a);
+		url.searchParams.set('b', b);
+		url.searchParams.set('colorOne', colorOne);
+		url.searchParams.set('colorTwo', colorTwo);
+		url.searchParams.set('opacityOne', opacityOne);
+		url.searchParams.set('opacityTwo', opacityTwo);
+		url.searchParams.set('backgroundColor', backgroundColor);
+		url.searchParams.set('animate', animate);
+		navigator.clipboard.writeText(url.href);
     }
 
 	return (
@@ -253,7 +271,7 @@ const App = (props) => {
 					onChange={(e) => setAnimate(e.target.value)}
 				/>
 
-                <button onClick={jsonToClipboard}>Copy JSON</button>
+                <button onClick={urlToClipboard}>Copy Link! Share it!</button>
 			</div>
 		</div>
 	);
