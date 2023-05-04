@@ -12,8 +12,21 @@ tags:
     - Web
 id: 01GZHN7B9ZJKQT8RXXPQ2SGHQJ
 ---
+
 import Chladni from "../../components/chladni.jsx";
 
 This is a playground for simulating Chladni plates with WebGL shaders in three.js. The code is available on [GitHub](https://github.com/petertjmills/webgl-chladni).
 
-<Chladni client:only />
+<Chladni
+	client:only
+	n={3}
+	m={5}
+	a={100}
+	b={100}
+	colorOne={"#000000"}
+	colorTwo={"#000000"}
+	backgroundColor={"#ffffff"}
+    opacityOne={1}
+    opacityTwo={1}
+    animate={0.3}
+/>
