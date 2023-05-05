@@ -12,9 +12,15 @@ if (!response) {
 }
 
 const { Content } = await response.render();
+
 ---
 
-<Layout>
+<Layout 
+  title={response.data.title}
+  articlePublished={new Date(response.data.date).toLocaleDateString('en-GB')}
+  description={response.data.description}
+  tags={response.data.tags}
+>
 	<article>
 		<div class="flex flex-col gap-2">
       <h1 class="font-black sm:text-7xl break-words text-4xl">{response.data.title}</h1>

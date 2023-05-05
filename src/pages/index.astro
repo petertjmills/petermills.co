@@ -1,20 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import { getEntryBySlug } from 'astro:content';
+import { getEntryBySlug } from "astro:content";
 
-const response = await getEntryBySlug('main', 'home');
+const response = await getEntryBySlug("main", "home");
 
 const { Content } = await response.render();
+
+const title = "Home";
+const articlePublished = "";
+const description = "peter mills' blog";
+const tags = [""];
 ---
 
-<Layout>
-  <article>
-    <h1 class="font-black sm:text-7xl break-words text-4xl">{response.data.title}</h1>
-    <div class="type">
-      <article>
-        <Content />
-      </article>
-    </div>
-  </article>
+<Layout 
+  title={title}
+  articlePublished={articlePublished}
+  description={description}
+  tags={tags}
+>
+	<article>
+		<h1 class="font-black sm:text-7xl break-words text-4xl">
+			{response.data.title}
+		</h1>
+		<div class="type">
+			<article>
+				<Content />
+			</article>
+		</div>
+	</article>
 </Layout>

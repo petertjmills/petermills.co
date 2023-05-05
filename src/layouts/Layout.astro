@@ -2,9 +2,9 @@
 import { SEO } from "astro-seo";
 import Header from "../components/Header.astro";
 import "../styles/base.css";
-import "@fontsource/inter"
+import "@fontsource/inter";
 
-const { title, articlePublished } = Astro.props;
+const { title, articlePublished, description, tags } = Astro.props;
 ---
 
 <script>
@@ -27,16 +27,15 @@ const { title, articlePublished } = Astro.props;
 
 		<SEO
 			title={title}
-			titleTemplate="%s | "
-			titleDefault=""
-			description=""
-			canonical=""
+			titleTemplate="%s | peter mills"
+			titleDefault="peter mills"
+			description={description}
 			charset="utf-8"
 			openGraph={{
 				basic: {
-					title: "",
-					type: "",
-					image: "",
+					title: {description},
+					type: "website",
+					image: "",  
 					url: "",
 				},
 				optional: {
@@ -52,17 +51,36 @@ const { title, articlePublished } = Astro.props;
 				},
 				article: {
 					publishedTime: articlePublished,
+					tags: tags,
 				},
 			}}
 			twitter={{
 				card: "summary_large_image",
-				title: "",
-				description: "",
+				title: { title },
+				description: { description },
 				image: "",
 				imageAlt: "",
 			}}
 		/>
 		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="/site.webmanifest" />
 	</head>
 	<body
 		class="min-h-screen flex flex-col text-dark dark:text-light bg-light dark:bg-dark"
