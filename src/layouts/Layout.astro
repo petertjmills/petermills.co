@@ -3,6 +3,7 @@ import { SEO } from "astro-seo";
 import Header from "../components/Header.astro";
 import "../styles/base.css";
 import "@fontsource/inter";
+import { Analytics } from '@vercel/analytics/react';
 
 const { title, articlePublished, description, tags } = Astro.props;
 ---
@@ -92,5 +93,6 @@ const { title, articlePublished, description, tags } = Astro.props;
 		<footer class="text-center py-4 mt-20">
 			{new Date().getFullYear() + " "} © All rights reserved.
 		</footer>
+		<Analytics client:only />
 	</body>
 </html>
