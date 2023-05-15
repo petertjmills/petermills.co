@@ -176,8 +176,8 @@ const App = (props) => {
 							colorTwo={colorTwo}
 							opacityOne={opacityOne}
 							opacityTwo={opacityTwo}
-							height={bounds.height}
-							width={bounds.width}
+							height={bounds.height * window.devicePixelRatio}
+							width={bounds.width * window.devicePixelRatio}
 							animate={animate}
 						/>
 					</Canvas>
