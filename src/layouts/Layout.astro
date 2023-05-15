@@ -3,7 +3,7 @@ import { SEO } from "astro-seo";
 import Header from "../components/Header.astro";
 import "../styles/base.css";
 import "@fontsource/inter";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
 const { title, articlePublished, description, tags } = Astro.props;
 ---
@@ -34,9 +34,9 @@ const { title, articlePublished, description, tags } = Astro.props;
 			charset="utf-8"
 			openGraph={{
 				basic: {
-					title: {description},
+					title: description,
 					type: "website",
-					image: "",  
+					image: "/og.svg",
 					url: "",
 				},
 				optional: {
@@ -45,7 +45,7 @@ const { title, articlePublished, description, tags } = Astro.props;
 					siteName: "",
 				},
 				image: {
-					secureUrl: "",
+					secureUrl: "/og.svg",
 					alt: "",
 					width: 100,
 					height: 100,
@@ -59,7 +59,7 @@ const { title, articlePublished, description, tags } = Astro.props;
 				card: "summary_large_image",
 				title: { title },
 				description: { description },
-				image: "",
+				image: "/og.svg",
 				imageAlt: "",
 			}}
 		/>
