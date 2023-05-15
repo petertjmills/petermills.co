@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build && node algolia.js",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "article": "node new-article.js new"
   },
   "dependencies": {
     "@astrojs/mdx": "^0.19.0",
