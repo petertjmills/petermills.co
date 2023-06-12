@@ -10,7 +10,7 @@ tags:
     - orzo
 id: 01H2RKJNN8Z2WTPH7BDM70H6AW
 ---
-Ingredients
+# Ingredients
 
 - 2 tbsp extra virgin olive oil, plus extra for drizzling
 - 1 brown onion, finely diced
@@ -27,7 +27,7 @@ Ingredients
 - Large handful of flatleaf parsley
 - 200g marinated feta
 
-Instructions
+# Instructions
 
 1. Warm a large frying pan over medium/high heat. Add the olive oil, onion, garlic, chili, oregano, and a generous pinch of salt. Cook for 3 minutes, stirring frequently, until the onion softens.
 
