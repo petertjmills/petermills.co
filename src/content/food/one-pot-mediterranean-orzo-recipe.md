@@ -40,3 +40,5 @@ id: 01H2RKJNN8Z2WTPH7BDM70H6AW
 5. Roughly chop half the parsley and mix it into the dish along with half of the feta.
 
 6. Serve your delightful Mediterranean Orzo sprinkled with the remaining feta and parsley leaves. Top it off with a dash of black pepper and an optional drizzle of olive oil for that extra dash of flavor.
+
+> Source: [instagram](https://www.instagram.com/p/CjC06-YMkaX/)
