@@ -10,6 +10,8 @@ menu:
       url: /shaders/
     - title: "Food"
       url: /food/
+    - title: "Daily"
+      url: /daily/
       
 id: 01GZFCAKZDX9CV3PRYEAB7X7JZ
 ---
