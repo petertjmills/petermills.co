@@ -3,7 +3,7 @@ import { ToggleDarkMode } from "../components/ToggleDarkMode.jsx";
 import { Search } from "./Search.jsx";
 
 import Menu from "../components/Menu.astro";
-import "@fontsource/comfortaa/700.css";
+import "@fontsource-variable/quicksand";
 
 import { getEntryBySlug } from "astro:content";
 
@@ -12,8 +12,8 @@ const menuItems = response.data.menu;
 ---
 
 <header class="pb-10">
-	<div class="flex flex-wrap justify-between p-3" id="header">
-		<a href="/" class="logo px-5 lg:px-10">peter mills.</a>
+	<div class="flex flex-wrap justify-between p-3 border-b" id="header">
+		<a href="/" class="logo px-2">peter mills.</a>
 		<div class="flex gap-1 lg:gap-10 align-center place-items-center">
 			<Search client:only />
 			<ToggleDarkMode client:only />
@@ -42,8 +42,10 @@ const menuItems = response.data.menu;
 		height: 2rem;
 	}
 	.logo {
-		font-family: "Comfortaa", sans-serif;
-		font-size: 2.5rem;
+		font-family: "Quicksand Variable", sans-serif;
+		font-size: 2rem;
 		font-weight: 700;
+		/* spacing -1 */
+		letter-spacing: -0.05em;
 	}
 </style>

@@ -3,7 +3,7 @@ title: Understanding React
 subtitle: A guide to understanding React
 date: 2023-05-02
 draft: false
-description:
+description: "Understanding React"
 tags:
   - react
 id: 01GZFC6HGSDZ33BMQAV3349CW2

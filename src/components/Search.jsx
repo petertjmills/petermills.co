@@ -32,6 +32,7 @@ const CommandMenu = ({ searchClicked, setSearchClicked }) => {
 			search={search}
 			isOpen={searchClicked}
 			page={page}
+			className="text-black"
 		>
 			<CommandPalette.List key="root" heading="Search Results">
 				{data.map((item) => (
