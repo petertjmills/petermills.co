@@ -1,10 +1,10 @@
 ---
 import { SEO } from "astro-seo";
 import Header from "../components/Header.astro";
-import "../styles/base.css";
+import "@/styles/base.css";
 import "@fontsource/inter";
 import { Analytics } from "@vercel/analytics/react";
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 
 const { title, articlePublished, description, tags } = Astro.props;
 ---
@@ -86,15 +86,38 @@ const { title, articlePublished, description, tags } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body
-		class="min-h-screen flex flex-col text-dark dark:text-light bg-light dark:bg-dark"
+		class="text-dark dark:text-light before:bg-[url('/images/background/skypainting.jpg')] before:bg-cover before:bg-fixed before:absolute relative before:inset-0 before:z-0 before:brightness-100 before:dark:brightness-50 before:brightness-200 before:blur-sm"
 	>
-		<Header class="" />
-		<main class="lg:px-64 xl:px-[32rem] px-5 grow z-10">
-			<slot />
-		</main>
-		<footer class="text-center py-4 mt-20">
-			{new Date().getFullYear() + " "} © All rights reserved.
-		</footer>
-		<Analytics client:only />
+		<div class="min-h-screen flex flex-col relative">
+			<Header class="border-b" />
+			<main class="lg:px-64 xl:px-[32rem] px-5 grow z-10">
+				<slot />
+			</main>
+			<footer class="text-center py-4 mt-20">
+				{new Date().getFullYear() + " "} © All rights reserved.
+			</footer>
+			<Analytics client:only />
+		</div>
+
 	</body>
 </html>
+
+<style>
+	.module {
+		position: relative;
+	}
+	.module::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url("/images/background/skypainting.jpg");
+		background-size: cover;
+		background-attachment: fixed;
+	}
+	.module-inside {
+		position: relative;
+	}
+</style>
