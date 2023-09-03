@@ -1,7 +1,8 @@
 ---
 ---
 
-<script>
+<script is:inline>
+document.addEventListener('astro:page-load', () => {
 	//get document element with id mainmenu
 	var mainmenu = document.getElementById("mainmenu");
 	//get ul child of mainmenu
@@ -23,9 +24,11 @@
 			mainmenu.classList.remove("h-full");
 			mainmenu.classList.remove("opacity-100");
 			button.classList.remove("bg-primary-500");
-            button.classList.remove("bg-secondary-100");
+			button.classList.remove("bg-secondary-100");
 		}
 	};
+}, { once: true });
+
 </script>
 
 <button id="menubutton" class="font-bold p-2 rounded-lg px-5"> Menu</button>

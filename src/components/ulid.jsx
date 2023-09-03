@@ -1,6 +1,6 @@
 import { ulid } from "ulid";
-import { Button } from "./ui/button.tsx";
-import { Input } from "./ui/input.tsx";
+import { Button } from "./ui/button.jsx";
+import { Input } from "./ui/input.jsx";
 import { useEffect, useState } from "react";
 
 import { useToast } from "./ui/use-toast";
@@ -29,7 +29,7 @@ const Ulid = () => {
 	return (
 		<div className="flex justify-center pt-5">
 			<div className="flex flex-col justify-center w-1/2 gap-5">
-				<Input value={id} className="align-center" />
+				<Input value={id} onChange={()=>{}} className="align-center" />
 				<Button
 					onClick={() => {
 						setId(ulid());

@@ -36,16 +36,11 @@ const CommandMenu = ({ searchClicked, setSearchClicked }) => {
 		>
 			<CommandPalette.List key="root" heading="Search Results">
 				{data.map((item) => (
-					<CommandPalette.ListItem
-						key={item.objectID}
-						onClick={() => {
-
-							//redirect to url
-							window.location.href = item.path;
-						}}
-					>
-						{item.attributes.title}
-					</CommandPalette.ListItem>
+					<a href={item.path} key={item.objectID}>
+						<CommandPalette.ListItem>
+							{item.attributes.title}
+						</CommandPalette.ListItem>
+					</a>
 				))}
 
 				<CommandPalette.ListItem

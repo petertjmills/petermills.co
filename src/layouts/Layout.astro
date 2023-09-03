@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import "../styles/base.css";
 import "@fontsource/inter";
 import { Analytics } from "@vercel/analytics/react";
+import { ViewTransitions } from 'astro:transitions';
 
 const { title, articlePublished, description, tags } = Astro.props;
 ---
@@ -82,6 +83,7 @@ const { title, articlePublished, description, tags } = Astro.props;
 			href="/favicon-16x16.png"
 		/>
 		<link rel="manifest" href="/site.webmanifest" />
+		<ViewTransitions />
 	</head>
 	<body
 		class="min-h-screen flex flex-col text-dark dark:text-light bg-light dark:bg-dark"
