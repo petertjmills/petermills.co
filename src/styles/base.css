@@ -122,3 +122,9 @@
 		@apply text-lg leading-loose px-10;
 	}
 }
+
+@layer utilities {
+	.filter-brightness {
+		filter: brightness(0.5);
+	}
+}
