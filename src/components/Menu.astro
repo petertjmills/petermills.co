@@ -1,33 +1,34 @@
 ---
 ---
 
-<script is:inline>
-document.addEventListener('astro:page-load', () => {
-	//get document element with id mainmenu
-	var mainmenu = document.getElementById("mainmenu");
-	//get ul child of mainmenu
-	var ul = mainmenu.children[0];
-	var button = document.getElementById("menubutton");
-	//bool dark mode exists on html class
+<script>
+	// document.addEventListener('astro:page-load', 
+// () => {
+//get document element with id mainmenu
+var mainmenu = document.getElementById("mainmenu");
+//get ul child of mainmenu
+var ul = mainmenu.children[0];
+var button = document.getElementById("menubutton");
+//bool dark mode exists on html class
 
-	button.onclick = function () {
-		mainmenu.classList.toggle("h-full");
-		mainmenu.classList.toggle("opacity-100");
-		var darkmode = document.documentElement.classList.contains("dark");
-		button.classList.toggle(
-			darkmode ? "bg-primary-500" : "bg-secondary-100"
-		);
-	};
-	//if the menu is opened and the user clicks outside the menu, close the menu
-	document.onclick = function (event) {
-		if (event.target != ul && event.target != button) {
-			mainmenu.classList.remove("h-full");
-			mainmenu.classList.remove("opacity-100");
-			button.classList.remove("bg-primary-500");
-			button.classList.remove("bg-secondary-100");
-		}
-	};
-}, { once: true });
+button.onclick = function () {
+	mainmenu.classList.toggle("h-full");
+	mainmenu.classList.toggle("opacity-100");
+	var darkmode = document.documentElement.classList.contains("dark");
+	button.classList.toggle(
+		darkmode ? "bg-primary-500" : "bg-secondary-100"
+	);
+};
+//if the menu is opened and the user clicks outside the menu, close the menu
+document.onclick = function (event) {
+	if (event.target != ul && event.target != button) {
+		mainmenu.classList.remove("h-full");
+		mainmenu.classList.remove("opacity-100");
+		button.classList.remove("bg-primary-500");
+		button.classList.remove("bg-secondary-100");
+	}
+};
+// }, { once: true });
 
 </script>
 
