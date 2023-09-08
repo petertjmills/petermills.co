@@ -7,12 +7,19 @@ import { getCollection } from "astro:content";
 //is env dev?
 const dev = process.env.NODE_ENV !== "production";
 
-const response = await getCollection(collection, (collection) => {
-	if (collection.data.draft && !dev) {
+const responsePromise = getCollection(collection, (entry) => {
+	if (entry.data.draft && !dev) {
 		return false;
 	}
 	return true;
+}).catch((error) => {
+	console.error(error);
+	return [];
 });
+
+// await response
+const response = await responsePromise
+
 if (response.length === 0) {
 	return Astro.redirect("/404");
 }
