@@ -14,7 +14,8 @@ Otherwise I'm analysing big data infrastructure.
 :)
 
 [Contact me](/contact/)
-[Twitter](https://twitter.com/petertjmills)
+[Bluesky](https://bsky.app/profile/petermills.co)
 [GitHub](https://github.com/petertjmills)
 [LinkedIn](https://www.linkedin.com/in/peter-mills-724875201/)
 [Instagram](https://www.instagram.com/peter.mills/)
+[Twitter](https://twitter.com/petertjmills)
