@@ -11,7 +11,8 @@ if (!response) {
 	return Astro.redirect("/404");
 }
 
-const { Content } = await response.render();
+const { Content, remarkPluginFrontmatter } = await response.render();
+console.log(response);
 ---
 
 <Layout
@@ -19,6 +20,7 @@ const { Content } = await response.render();
 	articlePublished={new Date(response.data.date).toLocaleDateString("en-GB")}
 	description={response.data.description}
 	tags={response.data.tags}
+	imageUrl={response.data.image}
 >
 	<article class="flex flex-col gap-8">
 		<div class="flex flex-col gap-2">

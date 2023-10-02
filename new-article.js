@@ -103,6 +103,7 @@ draft: ${response.draft}
 description: "${response.description}"
 tags:
 ${response.tags.map((tag) => `    - ${tag}`).join("\n")}
+image: ""
 id: ${id}
 ---`;
 		await fs.writeFile(

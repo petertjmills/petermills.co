@@ -6,7 +6,7 @@ import "@fontsource/inter";
 import { Analytics } from "@vercel/analytics/react";
 // import { ViewTransitions } from "astro:transitions";
 
-const { title, articlePublished, description, tags } = Astro.props;
+const { title, articlePublished, description, tags, imageUrl } = Astro.props;
 ---
 
 <script>
@@ -37,7 +37,7 @@ const { title, articlePublished, description, tags } = Astro.props;
 				basic: {
 					title: description,
 					type: "website",
-					image: "/og.svg",
+					image: imageUrl || "/og.svg",
 					url: "",
 				},
 				optional: {
@@ -46,7 +46,7 @@ const { title, articlePublished, description, tags } = Astro.props;
 					siteName: "",
 				},
 				image: {
-					secureUrl: "/og.svg",
+					secureUrl: imageUrl || "/og.svg",
 					alt: "",
 					width: 100,
 					height: 100,
@@ -58,9 +58,9 @@ const { title, articlePublished, description, tags } = Astro.props;
 			}}
 			twitter={{
 				card: "summary_large_image",
-				title: { title },
-				description: { description },
-				image: "/og.svg",
+				title: title,
+				description: description,
+				image: imageUrl || "/og.svg",
 				imageAlt: "",
 			}}
 		/>
@@ -98,26 +98,23 @@ const { title, articlePublished, description, tags } = Astro.props;
 			</footer>
 			<Analytics client:only />
 		</div>
-
-	</body>
+	</body><style>
+		.module {
+			position: relative;
+		}
+		.module::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url("/images/background/skypainting.jpg");
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		.module-inside {
+			position: relative;
+		}
+	</style>
 </html>
-
-<style>
-	.module {
-		position: relative;
-	}
-	.module::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-image: url("/images/background/skypainting.jpg");
-		background-size: cover;
-		background-attachment: fixed;
-	}
-	.module-inside {
-		position: relative;
-	}
-</style>
