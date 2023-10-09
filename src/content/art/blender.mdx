@@ -1,0 +1,31 @@
+---
+title: "Blender"
+subtitle: "Works created in blender"
+date: 2023-10-09
+draft: true
+description: "Works created in blender - Peter Mills"
+tags:
+    - blender
+    - 3d
+    - art
+image: ""
+id: 01HC9SNXGXBVX6XBRY98VJ51Y6
+---
+
+import { ImageGallery } from "@/components/ImageGallery.jsx";
+import { Image } from "astro:assets";
+import water from "../../assets/art/blender/water.png";
+import seahorseballs from "../../assets/art/blender/seahorseballs.png";
+import brain from "../../assets/art/blender/brain.png";
+import bubble from "../../assets/art/blender/bubble.png";
+import spirals2 from "../../assets/art/blender/spirals2.png";
+import notsureFINAL from "../../assets/art/blender/notsureFINAL.png";
+
+<ImageGallery client:load>
+	<Image src={water} alt="test" />
+	<Image src={seahorseballs} alt="test" />
+	<Image src={brain} alt="test" />
+	<Image src={bubble} alt="test" />
+	<Image src={spirals2} alt="test" />
+	<Image src={notsureFINAL} alt="test" />
+</ImageGallery>

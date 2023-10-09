@@ -1,0 +1,42 @@
+---
+import { parse } from "node-html-parser";
+
+const html = await Astro.slots.render("default");
+let col1 = [];
+let col2 = [];
+let col3 = [];
+
+if (html) {
+	const images = Array.from(parse(html).querySelectorAll("img"));
+
+	col1 = images.map((image, index) => {
+		if (index % 3 === 0) {
+			return image;
+		}
+	});
+
+	col2 = images.map((image, index) => {
+		if (index % 3 === 1) {
+			return image;
+		}
+	});
+
+	col3 = images.map((image, index) => {
+		if (index % 3 === 2) {
+			return image;
+		}
+	});
+}
+---
+
+<div class="grid grid-cols-3 no-type">
+	<div class="flex flex-col">
+		{col1.map((image) => <div>{image}</div>)}
+	</div>
+	<div class="flex flex-col">
+		{col2.map((image) => <div>{image}</div>)}
+	</div>
+	<div class="flex flex-col">
+		{col3.map((image) => <div>{image}</div>)}
+	</div>
+</div>
